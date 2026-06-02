@@ -5,6 +5,8 @@ jobs:
   print-ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - name: show-os
+      - name: Show Message
         run: echo "This is running on Ubuntu"
+
+      - name: Show Runner OS
         run: echo "RUNNER OS: $RUNNER_OS"
