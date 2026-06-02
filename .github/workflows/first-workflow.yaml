@@ -1,14 +1,10 @@
-name: events-pipeline
-on: 
-  push:
-  pull_request:
-  schedule:
-      - cron: '0 0 * * *' 
-  workflow_dispatch:
+name: runners
+on:
+  push
 jobs:
-  echo:
+  print-ubuntu:
     runs-on: ubuntu-latest
     steps:
-      - name: Echo event
-        run: echo "triggred using a(n) ${{github.event_name}} event"
+      - run: echo "This is running on Ubuntu"
+      - run: echo "Ubuntu version: $RUNNER_OS"
 
