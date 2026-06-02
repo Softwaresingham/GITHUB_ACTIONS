@@ -1,8 +1,14 @@
 name: events-pipeline
-on: push
+on: 
+  - push:
+  - pull_request:
+  - schedule:
+      - cron: '0 0 * * *' 
+  - workflow_dispatch:
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: Echo event
-        run: echo "Event triggered using a(n) ${{ github.event_name }}"
+        run: run: echo "triggred using a(n) ${{github.event_name}} event"
+
