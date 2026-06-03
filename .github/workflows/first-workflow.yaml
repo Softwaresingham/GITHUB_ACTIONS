@@ -1,14 +1,16 @@
 name: list all the software
+
 on:
   push
-jobs: 
+
+jobs:
   list:
     runs-on: ubuntu-latest
+
     steps:
       - name: List installed software
-        steps:
-           - run: | 
-                mvn -version
-                npm -v
-                docker --version
-                kubectl version --client
+        run: |
+          mvn -version
+          npm -v
+          docker --version
+          kubectl version --client
