@@ -1,4 +1,4 @@
-name: Checkout Without Action
+name: Checkout With Action
 
 on:
   push
@@ -10,9 +10,9 @@ jobs:
 
     steps:
 
-      - name: Clone Repository
-        run: |
-          git clone https://github.com/Softwaresingham/GITHUB_ACTIONS.git
-          cd GITHUB_ACTIONS
-          ls -lrt
+      - name: Checkout Code
+        uses: actions/checkout@v6
+
+      - name: Verify
+        run: ls -lrt
         
