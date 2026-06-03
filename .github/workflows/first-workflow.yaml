@@ -1,11 +1,29 @@
-name: npm install
+name: Check Installed Tools
+
 on:
   push
+
 jobs:
-  npm-install:
+  check-tools:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: NPM or Yarn install with caching
-        uses: bahmutov/npm-install@v1.12.1 
-      - name: version
+
+      - name: Check Java
+        run: java -version
+
+      - name: Check Maven
+        run: mvn -version
+
+      - name: Check NodeJS
+        run: node -v
+
+      - name: Check NPM
         run: npm -v
+
+      - name: Check Docker
+        run: docker --version
+
+      - name: Check Kubectl
+        run: kubectl version --client
