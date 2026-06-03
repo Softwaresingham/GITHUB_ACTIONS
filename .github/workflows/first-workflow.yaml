@@ -6,4 +6,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List installed software
-        run: apt list --installed
+        run: mvn -v
