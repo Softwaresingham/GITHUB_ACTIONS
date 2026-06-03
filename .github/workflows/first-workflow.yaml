@@ -1,11 +1,18 @@
-name: runners
+name: Checkout Without Action
+
 on:
   push
+
 jobs:
-  print-ubuntu:
+  build:
+
     runs-on: ubuntu-latest
+
     steps:
-      - run: | 
-          echo "This is running on Ubuntu"
-          echo "RUNNER OS: $RUNNER_OS"
+
+      - name: Clone Repository
+        run: |
+          git clone https://github.com/Softwaresingham/GITHUB_ACTIONS.git
+          cd GITHUB_ACTIONS
+          ls -lrt
         
