@@ -1,20 +1,9 @@
-name: Install Java Without Action
-
-on:
+name: install java with aactions
+on: 
   push
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+jobs: 
+  java-install:
+    runs-on: ubuntu_latest
     steps:
-
-      - name: Install Java
-        run: |
-          sudo apt update
-          sudo apt install openjdk-17-jdk -y
-
-      - name: Verify Java
-        run: java -version
-        
+      - name: java install
+        uses: actions/setup-java@v5.2.0
