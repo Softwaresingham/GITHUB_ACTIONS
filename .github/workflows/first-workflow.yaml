@@ -1,16 +1,11 @@
-name: list all the software
-
+name: npm install
 on:
   push
-
 jobs:
-  list:
+  npm-install:
     runs-on: ubuntu-latest
-
     steps:
-      - name: List installed software
-        run: |
-          mvn -version
-          npm -v
-          docker --version
-          kubectl version --client
+      - name: NPM or Yarn install with caching
+        uses: bahmutov/npm-install@v1.12.1 
+      - name: version
+        run: npm -v
