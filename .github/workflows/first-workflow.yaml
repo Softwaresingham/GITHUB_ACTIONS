@@ -8,13 +8,5 @@ jobs:
       - run: | 
           echo "This is running on Ubuntu"
           echo "RUNNER OS: $RUNNER_OS"
-  print-windows:
-    runs-on: windows-latest
-    steps:
-      - name: windows os
-        shell: bash
-        run: |
-          echo "This is running on windows"
-          echo "RUNNER OS: $RUNNER_OS"
         
         
