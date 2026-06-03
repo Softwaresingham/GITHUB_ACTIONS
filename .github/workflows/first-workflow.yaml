@@ -7,8 +7,6 @@ jobs:
     steps:
       - name: List installed software
         steps:
-           - run: java -version
-
            - run: | 
                 mvn -version
                 npm -v
