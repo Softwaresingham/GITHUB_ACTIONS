@@ -6,4 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: List installed software
-        run: mvn -v
+        steps:
+           - run: java -version
+
+           - run: mvn -version
+
+           - run: npm -v
+
+           - run: docker --version
+
+           - run: kubectl version --client
