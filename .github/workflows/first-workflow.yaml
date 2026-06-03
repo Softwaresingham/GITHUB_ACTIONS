@@ -1,9 +1,9 @@
-name: install java with aactions
-on: 
+name: list all the software
+on:
   push
 jobs: 
-  java-install:
-    runs-on: ubuntu_latest
+  list:
+    runs-on: ubuntu-latest
     steps:
-      - name: java install
-        uses: actions/setup-java@v5.2.0
+      - name: List installed software
+        run: apt list --installed
