@@ -1,4 +1,4 @@
-name: Checkout With Action
+name: Install Java Without Action
 
 on:
   push
@@ -10,9 +10,11 @@ jobs:
 
     steps:
 
-      - name: Checkout Code
-        uses: actions/checkout@v6
+      - name: Install Java
+        run: |
+          sudo apt update
+          sudo apt install openjdk-17-jdk -y
 
-      - name: Verify
-        run: ls -lrt
+      - name: Verify Java
+        run: java -version
         
