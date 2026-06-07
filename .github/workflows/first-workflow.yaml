@@ -2,9 +2,8 @@ name: Demo
 on:
   push
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-    env:
-      APP_NAME: login-app
     steps:
-      - run: echo $APP_NAME
+      - name: Print Java Version
+        run: echo "${{ vars.JAVAVERSION }}"
