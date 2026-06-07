@@ -1,9 +1,15 @@
 name: Demo
+
 on:
   push
+
 jobs:
+
   test:
+
     runs-on: ubuntu-latest
+
     steps:
-      - name: Print Java Version
-        run: echo "${{ vars.JAVAVERSION }}"
+
+      - name: Print Secret
+        run: echo "${{ secrets.DOCKER_PASSWORD }}"
