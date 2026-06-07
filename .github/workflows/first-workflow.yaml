@@ -1,29 +1,10 @@
-name: Check Installed Tools
-
+name: Demo
 on:
   push
-
+env:
+  APP_NAME: login-app
 jobs:
-  check-tools:
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
-
-      - name: Check Java
-        run: java -version
-
-      - name: Check Maven
-        run: mvn -version
-
-      - name: Check NodeJS
-        run: node -v
-
-      - name: Check NPM
-        run: npm -v
-
-      - name: Check Docker
-        run: docker --version
-
-      - name: Check Kubectl
-        run: kubectl version --client
+      - run: echo $APP_NAME
