@@ -1,29 +1,16 @@
 name: Branch Based Deployment
-
 on:
   push
-
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Build Application
         run: echo "Building Application"
-
   deploy:
-
     needs: build
-
     if: github.ref == 'refs/heads/main'
-
     runs-on: ubuntu-latest
-
     steps:
-
       - name: Deploy Application
         run: echo "Deploying to Production"
- 
