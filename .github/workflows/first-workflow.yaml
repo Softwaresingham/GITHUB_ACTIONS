@@ -1,15 +1,8 @@
 name: Demo
-
 on:
   push
-
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
-
     steps:
-
-      - name: Print Secret
-        run: echo "${{ secrets.DOCKER_PASSWORD }}"
+      - run: echo "${{ github.actor }}"
