@@ -1,16 +1,27 @@
-name: Branch Based Deployment
+name: Java CI Without Cache
+
 on:
   push
+
 jobs:
+
   build:
+
     runs-on: ubuntu-latest
+
     steps:
+
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Verify Maven
+        run: mvn -version
+
       - name: Build Application
-        run: echo "Building Application"
-  deploy:
-   
-    if: github.ref == 'refs/heads/main'
-    runs-on: ubuntu-latest
-    steps:
-      - name: Deploy Application
-        run: echo "Deploying to Production"
+        run: mvn clean package
